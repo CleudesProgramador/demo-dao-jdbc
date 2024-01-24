@@ -1,7 +1,7 @@
 package application;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -12,14 +12,11 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		LocalDate birthDate = LocalDate.parse("15/04/1988",DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		//SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		Department obj = new Department(1, "Books");
-		
-		Seller seller = new Seller(21,"Bob", "bob@gmail.com", birthDate, 3000.0, obj);
-		
-		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
+		
+		Seller seller = sellerDao.findById(3);
 		
 		System.out.println(seller);
 		
