@@ -1,7 +1,5 @@
 package application;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -27,8 +25,11 @@ public class Program {
 			System.out.println(obj);
 		}
 		
-		
-		
+		System.out.println("\n=== Test 3: seller findAll ===");
+		list = sellerDao.findAll();
+		for(Seller obj: list) {
+			System.out.println(obj);
+		}
 		
 
 	}
